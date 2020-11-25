@@ -25,7 +25,7 @@ SECRET_KEY = '(d=5#tv%w+#bc!ssp*i@oo+*$%t0upgjxlb5yg9cv-)8^s)8@#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -129,6 +129,11 @@ LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 
+
+AUTHENTICATION_BACKENDS = [
+'django.contrib.auth.backends.ModelBackend',
+'account.authentication.EmailAuthBackend',
+]
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
