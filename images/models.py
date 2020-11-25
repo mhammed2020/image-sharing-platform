@@ -14,6 +14,8 @@ class Image(models.Model):
     def __str__(self):
         return self.title
 
+    
+
 
     # ...override the save() method of the Image model
     def save(self, *args, **kwargs):
